@@ -1,4 +1,8 @@
 # Required variables:
+variable "env" {
+  description = "Environment (dev/prod)"
+  type        = string
+}
 
 variable "parent_module_path" {
   description = "Path of the parent module - to be used for naming resources etc"

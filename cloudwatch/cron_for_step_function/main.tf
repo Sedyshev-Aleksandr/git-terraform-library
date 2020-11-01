@@ -1,7 +1,7 @@
 
 # Generates a cloudwatch event rule to trigger
 resource "aws_cloudwatch_event_rule" "this" {
-  name                = join("", [basename(var.parent_module_path), "-", var.module_name])
+  name                = join("", [basename(var.parent_module_path), "-", var.module_name, "-", var.env])
   schedule_expression = var.cron_expression
   description         = var.description
   role_arn            = var.iam_role_arn

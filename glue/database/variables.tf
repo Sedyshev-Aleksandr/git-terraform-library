@@ -1,4 +1,9 @@
 # Required variables:
+variable "env" {
+  description = "Environment (dev/prod)"
+  type        = string
+}
+
 variable "database_name" {
   description = "Database name in the (Data catalog) of Glue service"
   type        = string

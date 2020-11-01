@@ -1,9 +1,6 @@
-
-
-
 # Generates the IAM role with policy to be used by the resource
 resource "aws_iam_role" "this" {
-  name                 = join("", [basename(var.parent_module_path), "-", var.module_name])
+  name                 = join("", [basename(var.parent_module_path), "-", var.module_name, "-", var.env])
   assume_role_policy   = var.assume_policy_path
   description          = var.description
   permissions_boundary = var.permission_boundary
@@ -12,7 +9,7 @@ resource "aws_iam_role" "this" {
 
 # Generates the role policy to be used by the resource
 resource "aws_iam_role_policy" "this" {
-  name   = join("", [basename(var.parent_module_path), "-", var.module_name,"-policy"])
+  name   = join("", [basename(var.parent_module_path), "-", var.module_name,"-policy-", var.env])
   role   = aws_iam_role.this.id
   policy = var.policy_path
 }

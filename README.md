@@ -23,6 +23,13 @@ The following shows the currently available resources/functions and their locati
     ├── iam
     │    ├── role
     ├── lambda
+    │    ├── function  
+    │    ├── layer
+    ├── s3
+    │    ├── create_folder  
+    │    ├── general_bucket
+    │    ├── upload_files  
+    │    ├── website_bucket   
     ├── step_function
 
 ## Tagging

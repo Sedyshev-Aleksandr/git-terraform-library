@@ -1,6 +1,8 @@
-
-
 # Required variables:
+variable "env" {
+  description = "Environment (dev/prod)"
+  type        = string
+}
 
 variable "parent_module_path" {
   description = "Path of the parent module - to be used for naming resources etc"
@@ -33,7 +35,6 @@ variable "module_name" {
 }
 
 #Optional variables - default values used unless others specified:
-
 variable "lambda_runtime" {
   description = "Runtime environment to be used when executing lambda"
   type        = string
@@ -73,7 +74,6 @@ variable "resource_tags" {
     "tag" = "none given"
   }
 }
-
 
 variable "additional_file_include" {
   description = "option to include script file from other location"

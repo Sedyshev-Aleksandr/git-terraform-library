@@ -1,4 +1,3 @@
-
 resource "local_file" "additional_file" {
   count = var.additional_file_include ? 1 : 0
   filename = join("", [var.lambda_script_source_dir, "/", var.additional_file_target])
@@ -47,7 +46,7 @@ data "archive_file" "second_that" {
 
 resource "aws_lambda_function" "this" {
   filename         = join("", [var.lambda_script_output_path, var.module_name, ".zip"])
-  function_name    = join("", [basename(var.parent_module_path), "-", var.module_name])
+  function_name    = join("", [basename(var.parent_module_path), "-", var.module_name, "-",var.env])
   role             = var.iam_role_arn
   handler          = var.lambda_handler
   source_code_hash = filebase64sha256(join("", [var.lambda_script_output_path, var.module_name, ".zip"]))
