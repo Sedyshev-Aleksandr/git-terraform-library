@@ -1,4 +1,4 @@
-local {
+locals {
   table_name = "${var.table_name}-${var.env}"
 }
 

@@ -1,4 +1,4 @@
-local {
+locals {
   database_name = "${var.database_name}-${var.env}"
 }
 

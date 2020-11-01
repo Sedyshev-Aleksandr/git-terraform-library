@@ -1,4 +1,3 @@
-
 # Generates a cloudwatch event rule to trigger
 resource "aws_cloudwatch_event_rule" "this" {
   name                = join("", [basename(var.parent_module_path), "-", var.module_name, "-", var.env])
