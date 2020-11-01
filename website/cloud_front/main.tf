@@ -64,7 +64,6 @@ resource "aws_cloudfront_distribution" "this" {
 }
 
 resource "aws_route53_record" "this" {
-
   zone_id  = var.zone_id
   name     = local.domain_name
   type     = "A"

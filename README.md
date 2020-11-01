@@ -39,7 +39,7 @@ All script files pushed to this repo should be tagged in accordance with the git
 
 ## Example
 - `git tag --delete 0.35.dev`
-- `git tag -a 0.35.dev -m "new env variable"`
+- `git tag -a 0.35.dev -m "new env variable, new website services"`
 - `git push --follow-tags`
 
 
